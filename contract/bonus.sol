@@ -33,7 +33,7 @@ contract owned {
 contract tokenRecipient {function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData);}
 
 
-contract CSToken is owned {uint8 public decimals;
+contract Token is owned {uint8 public decimals;
 
 	uint[] public agingTimes;
 
@@ -53,7 +53,7 @@ contract CSToken is owned {uint8 public decimals;
 }
 
 
-contract KickicoCrowdsale is owned {
+contract Crowdsale is owned {
 	uint[] public IcoStagePeriod;
 
 	bool public IcoClosedManually = false;
@@ -95,9 +95,9 @@ contract KickicoCrowdsale is owned {
 
 	address public lottery;
 
-	address public angelInvestors;
+	address public preInvestors;
 
-	address public china;
+	address public country;
 
 	uint tokenMultiplier = 10;
 
@@ -110,7 +110,7 @@ contract KickicoCrowdsale is owned {
 
 	bool parametersHaveBeenSet = false;
 
-	function KickicoCrowdsale(address _tokenAddress, address _prPool, address _founders, address _advisory, address _bounties, address _lottery, address _angelInvestors, address _china, address _oldTokenAddress) {
+	function Crowdsale(address _tokenAddress, address _prPool, address _founders, address _advisory, address _bounties, address _lottery, address _angelInvestors, address _china, address _oldTokenAddress) {
 		tokenReward = CSToken(_tokenAddress);
 		oldTokenReward = CSToken(_oldTokenAddress);
 

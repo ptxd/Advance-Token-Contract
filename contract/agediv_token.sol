@@ -72,15 +72,15 @@ contract Utils {
 }
 
 
-contract CSToken is owned, Utils {
+contract Token is owned, Utils {
 	struct Dividend {uint256 time; uint256 tenThousandth; uint256 countComplete;}
 
 	/* Public variables of the token */
-	string public standard = 'Token 0.1';
+	string public standard = 'ERC20';
 
-	string public name = 'KickCoin';
+	string public name = 'Token';
 
-	string public symbol = 'KC';
+	string public symbol = 'Test';
 
 	uint8 public decimals = 8;
 
@@ -122,7 +122,7 @@ contract CSToken is owned, Utils {
 	event NewSmartToken(address _token);
 
 	/* Initializes contract with initial supply tokens to the creator of the contract */
-	function CSToken() {
+	function Token() {
 		owner = msg.sender;
 		// So that the index starts with 1
 		dividends.push(Dividend(0, 0, 0));
